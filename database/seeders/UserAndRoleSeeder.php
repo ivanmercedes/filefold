@@ -14,17 +14,15 @@ class UserAndRoleSeeder extends Seeder
      */
     public function run(): void
     {
-        //
-        $adminRole = Role::create(['name' => 'Admin']);
+        Role::create(['name' => 'Super Admin']);
 
-        //
         $user = User::create([
             'name' => 'Administrador',
             'email' => 'admin@admin.com',
             'password' => bcrypt('admin123'),
-            'email_verified_at' => now(), 
+            'email_verified_at' => now(),
         ]);
 
-        $user->assignRole('Admin');
+        $user->assignRole('Super Admin');
     }
 }
