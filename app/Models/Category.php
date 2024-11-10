@@ -11,6 +11,10 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'custom_url' => 'boolean',
+    ];
+
     // mass assignment
     protected $fillable = ['name', 'slug', 'parent_id'];
 

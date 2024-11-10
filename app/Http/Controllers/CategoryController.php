@@ -12,7 +12,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::with(['children.parent.parent','parent.parent'])->get();
+        $categories = Category::with(['children'])->whereNull('parent_id')->get();
 
         return $categories;
     }

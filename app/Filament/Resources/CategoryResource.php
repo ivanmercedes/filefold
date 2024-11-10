@@ -2,22 +2,28 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CategoryResource\Pages;
-use App\Filament\Resources\CategoryResource\RelationManagers;
-use App\Models\Category;
+use Closure;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Forms\Set;
+use App\Models\Category;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\Toggle;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\CategoryResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\CategoryResource\RelationManagers;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Get;
 
 class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
 
-    protected static ?string $label = 'categoria';
+    protected static ?string $label = 'grupo';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -25,14 +31,57 @@ class CategoryResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('slug')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Select::make('parent_id')
-                    ->relationship('parent', 'name'),
+                Section::make('Información del Grupo')
+                    ->columnSpan(2)
+                    ->schema([
+                        Forms\Components\TextInput::make('name')
+                            ->required()
+                            ->reactive()
+                            ->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state)))
+                            ->maxLength(255),
+                        Forms\Components\RichEditor::make('description')
+                            ->nullable()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('slug')
+                            ->required()
+                            ->rules(['alpha_dash'])
+                            ->unique(ignoreRecord: true)
+                            ->maxLength(255),
+
+                        Forms\Components\Select::make('parent_id')
+                            ->label('Grupo Padre')
+                            ->relationship('parent', 'name'),
+
+                        Toggle::make('is_custom_page')
+                            ->onColor('success')
+                            ->offColor('danger')
+                            ->label('Usar como pagina')
+                            ->live()
+                            ->default(false),
+
+                        Toggle::make('is_custom_url')
+                            ->hidden(fn(Get $get): bool =>  $get('is_custom_page'))
+                            ->onColor('success')
+                            ->offColor('danger')
+                            ->label('Usar URL Custom')
+                            ->live()
+                            ->default(false),
+                    ]),
+
+
+                Section::make('URL Custom')
+                    ->columnSpan(2)
+                    ->hidden(fn(Get $get): bool => ! $get('is_custom_url'))
+                    ->description('URL personalizada para el Grupo')
+                    ->schema([
+                        Forms\Components\TextInput::make('Url Custom')
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\Checkbox::make('target_blank')
+                            ->label('Abrir en una nueva pestaña')
+                    ])
+
+
             ]);
     }
 

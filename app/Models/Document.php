@@ -11,6 +11,10 @@ class Document extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'attachment' => 'array',
+    ];
+
     protected $guarded   = [];
 
     /**

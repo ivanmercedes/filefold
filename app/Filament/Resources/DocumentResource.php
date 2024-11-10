@@ -15,6 +15,7 @@ use Filament\Forms\Components\FileUpload;
 use App\Filament\Resources\DocumentResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\DocumentResource\RelationManagers;
+use Filament\Forms\Components\Repeater;
 
 class DocumentResource extends Resource
 {
@@ -30,14 +31,13 @@ class DocumentResource extends Resource
             ->schema([
                 Forms\Components\Group::make()
                     ->schema([
-
                         Forms\Components\Section::make()
                             ->schema([
                                 Forms\Components\Select::make('category_id')
                                     ->label('Categoria')
                                     ->required()
                                     ->relationship('category', 'name')
-                                    ->getOptionLabelFromRecordUsing(fn (Model $record) => "{$record->name}")
+                                    ->getOptionLabelFromRecordUsing(fn(Model $record) => "{$record->name}")
                                     ->preload(true)
                                     ->searchable(['name']),
                                 Forms\Components\TextInput::make('name')
@@ -52,18 +52,17 @@ class DocumentResource extends Resource
 
 
                             ]),
-                        Forms\Components\Section::make('Archivo')
+                        Forms\Components\Section::make('Archivos')
                             ->schema([
-                                FileUpload::make('attachment')
-                                    ->label(''),
+                                Repeater::make('attachment')
+                                    ->schema([
+                                        FileUpload::make('file')
+                                            ->label(''),
+                                    ])
+
+
                             ])
                             ->collapsible(),
-
-                        // FileUpload::make('attachment')
-                        //     ->label('Archivo')
-                        //     ->columnSpanFull()
-                        //     ->required(),
-
                     ]),
                 Forms\Components\Group::make()
                     ->schema([
@@ -100,17 +99,11 @@ class DocumentResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->label('Nombre')
                     ->searchable(),
-                // Tables\Columns\TextColumn::make('description')
-                //     ->label('Descripcion')
-                //     ->searchable(),
                 Tables\Columns\TextColumn::make('status')
                     ->label('Estado'),
                 Tables\Columns\TextColumn::make('type')
                     ->label('Tipo')
                     ->searchable(),
-                // Tables\Columns\TextColumn::make('date')
-                //     ->date()
-                //     ->sortable(),
                 Tables\Columns\TextColumn::make('category.name')
                     ->label('Categoria')
                     ->numeric()
