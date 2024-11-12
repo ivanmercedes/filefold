@@ -40,8 +40,7 @@ class CategoryResource extends Resource
                             ->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state)))
                             ->maxLength(255),
                         Forms\Components\RichEditor::make('description')
-                            ->nullable()
-                            ->maxLength(255),
+                            ->nullable(),
                         Forms\Components\TextInput::make('slug')
                             ->required()
                             ->rules(['alpha_dash'])

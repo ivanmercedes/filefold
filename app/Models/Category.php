@@ -15,8 +15,7 @@ class Category extends Model
         'custom_url' => 'boolean',
     ];
 
-    // mass assignment
-    protected $fillable = ['name', 'slug', 'parent_id'];
+    protected $guarded = [];
 
     /**
      * Get the category childrens

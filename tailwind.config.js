@@ -1,5 +1,5 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -22,6 +22,10 @@ export default {
     			sm: 'calc(var(--radius) - 4px)'
     		},
     		colors: {
+                "inafocam-info": "#00B8E1",
+                "inafocam-blue": "#022f88",
+                "inafocam-gray": "#EFF4FC",
+                "inafocam-text": "#707070",
     			background: 'hsl(var(--background))',
     			foreground: 'hsl(var(--foreground))',
     			card: {
