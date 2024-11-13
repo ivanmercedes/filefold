@@ -13,6 +13,7 @@ class Category extends Model
 
     protected $casts = [
         'custom_url' => 'boolean',
+        'content' => 'array',
     ];
 
     protected $guarded = [];

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Category;
 use Illuminate\Foundation\Application;
@@ -26,21 +27,11 @@ Route::get('/', function () {
     ]);
 })->name('home.index');
 
-Route::get('/{category:slug}/{child:slug?}', function () {
-    $categories = Category::with(['children'])->whereNull('parent_id')->get();
-    return Inertia::render('Welcome', [
-        'groups' => $categories
-    ]);
-})->name('category.view');
+Route::get('/{category:slug}/{child:slug?}', [CategoryController::class, 'show'])
+    ->name('category.view');
 
-// Route::get('/dashboard', function () {
-//     return Inertia::render('Dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
+Route::get('/inicio', function () {
+    return redirect(route('home.index'), 301);
+});
 
 // require __DIR__ . '/auth.php';

@@ -66,14 +66,18 @@
 }
 
 @layer components {
-    p {
-        @apply text-primary mb-4;
+    .wrapper p {
+        @apply text-gray-600 mb-4;
     }
-    h1 {
+    .wrapper h1 {
         @apply text-3xl font-bold mb-5;
     }
 
     .wrapper img {
        @apply w-full;
+    }
+
+    .wrapper a {
+        @apply text-blue-500;
     }
 }
