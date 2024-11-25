@@ -1,1 +1,0 @@
-import{j as e,Y as r}from"./app-BPs2jlQi.js";import{t as n,v as o}from"./BaseLayout-C_T-Fn7V.js";function i({page:t}){return e.jsxs(e.Fragment,{children:[e.jsx(r,{title:"Welcome"}),e.jsx(n,{children:e.jsx("article",{className:"overflow-hidden rounded shadow transition h-full p-5 wrapper",children:e.jsx(o,{content:t.content})})})]})}export{i as default};

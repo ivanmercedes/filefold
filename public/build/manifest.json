@@ -1,6 +1,6 @@
 {
-  "_BaseLayout-C_T-Fn7V.js": {
-    "file": "assets/BaseLayout-C_T-Fn7V.js",
+  "_BaseLayout-DXlbVFhF.js": {
+    "file": "assets/BaseLayout-DXlbVFhF.js",
     "name": "BaseLayout",
     "imports": [
       "resources/js/app.tsx"
@@ -12,27 +12,27 @@
     "isEntry": true
   },
   "resources/js/Pages/Category.tsx": {
-    "file": "assets/Category-DKLWPrM4.js",
+    "file": "assets/Category-zv4qEcfD.js",
     "name": "Category",
     "src": "resources/js/Pages/Category.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.tsx",
-      "_BaseLayout-C_T-Fn7V.js"
+      "_BaseLayout-DXlbVFhF.js"
     ]
   },
   "resources/js/Pages/Welcome.tsx": {
-    "file": "assets/Welcome-C2OlI1Rl.js",
+    "file": "assets/Welcome-DZFwbx9n.js",
     "name": "Welcome",
     "src": "resources/js/Pages/Welcome.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.tsx",
-      "_BaseLayout-C_T-Fn7V.js"
+      "_BaseLayout-DXlbVFhF.js"
     ]
   },
   "resources/js/app.tsx": {
-    "file": "assets/app-BPs2jlQi.js",
+    "file": "assets/app-CiZEDM9H.js",
     "name": "app",
     "src": "resources/js/app.tsx",
     "isEntry": true,

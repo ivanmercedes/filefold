@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex container mx-auto  min-h-[278px] w-full flex-col items-center gap-10 py-8 xl:flex-row">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-5 sm:gap-10 xl:gap-3 w-fit">
             <img
-              src="/assets/images/logo-inafocam-2024.png"
+              src={`${route('home.index')}/assets/images/logo-inafocam-2024.png`}
               alt="Logo - Inafocam"
               className="w-full max-w-[250px] lg:max-w-[480px] "
             />

@@ -8,7 +8,7 @@ const Header = () => {
                 <div className="container px-5 mx-auto py-3 flex flex-col sm:flex-row justify-center sm:justify-between items-start sm:items-center gap-6 bg-white">
                     <Link href={route("home.index")}>
                         <img
-                            src="/assets/images/logo-inafocam-2024.png"
+                            src={`${route('home.index')}/assets/images/logo-inafocam-2024.png`}
                             alt="Logo - Inafocam"
                             className="cursor-pointer w-full h-full  md:block max-w-[240px] lg:max-w-[400px]"
                         />

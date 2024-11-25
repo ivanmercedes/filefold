@@ -31,7 +31,7 @@ const ContentRenderer = ({ content }: { content: Content[] }) => {
                         return (
                             <img
                                 key={index}
-                                src={`storage/` + item.data.url}
+                                src={`${route('home.index')}/storage/` + item.data.url}
                                 alt={item.data.alt || "image"}
                                 style={{ maxWidth: "100%", height: "auto" }}
                                 className="my-3"
