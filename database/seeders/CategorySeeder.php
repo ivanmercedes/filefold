@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,14 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             [
+                'name' => 'inicio',
+                'slug' => 'inicio'
+            ],
+            [
+                'name' => 'Portal institucional',
+                'slug' => 'portal-institucional'
+            ],
+            [
                 'name' => 'Base Legal de la Institución',
                 'slug' => 'base-legal-institucion'
             ],
@@ -24,6 +33,10 @@ class CategorySeeder extends Seeder
             [
                 'name' => 'Estructura Orgánica de la Institución',
                 'slug' => 'estructura-organica'
+            ],
+            [
+                'name' => 'Portal único de transparencia',
+                'slug' => 'portal-unico-transparencia'
             ],
             [
                 'name' => 'Oficina de Libre Acceso a la Información (OAI)',
@@ -92,7 +105,7 @@ class CategorySeeder extends Seeder
         ];
 
         foreach ($categories as $category) {
-            \App\Models\Category::create($category);
+            Category::create($category);
         }
 
         $this->command->info('Categorías creadas correctamente');

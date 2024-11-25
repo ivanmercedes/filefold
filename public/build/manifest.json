@@ -1,0 +1,47 @@
+{
+  "_BaseLayout-C_T-Fn7V.js": {
+    "file": "assets/BaseLayout-C_T-Fn7V.js",
+    "name": "BaseLayout",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "resources/css/filament/admin/theme.css": {
+    "file": "assets/theme-BKE_ywvO.css",
+    "src": "resources/css/filament/admin/theme.css",
+    "isEntry": true
+  },
+  "resources/js/Pages/Category.tsx": {
+    "file": "assets/Category-DKLWPrM4.js",
+    "name": "Category",
+    "src": "resources/js/Pages/Category.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_BaseLayout-C_T-Fn7V.js"
+    ]
+  },
+  "resources/js/Pages/Welcome.tsx": {
+    "file": "assets/Welcome-C2OlI1Rl.js",
+    "name": "Welcome",
+    "src": "resources/js/Pages/Welcome.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_BaseLayout-C_T-Fn7V.js"
+    ]
+  },
+  "resources/js/app.tsx": {
+    "file": "assets/app-BPs2jlQi.js",
+    "name": "app",
+    "src": "resources/js/app.tsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/Category.tsx",
+      "resources/js/Pages/Welcome.tsx"
+    ],
+    "css": [
+      "assets/app-UW0oSfIr.css"
+    ]
+  }
+}

@@ -11,8 +11,12 @@ class Category extends Model
 {
     use HasFactory;
 
-    // mass assignment
-    protected $fillable = ['name', 'slug', 'parent_id'];
+    protected $casts = [
+        'custom_url' => 'boolean',
+        'content' => 'array',
+    ];
+
+    protected $guarded = [];
 
     /**
      * Get the category childrens

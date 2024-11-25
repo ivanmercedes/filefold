@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->string('slug');
-            $table->string('attachment')->nullable();
+            $table->json('attachment')->nullable();
             $table->enum('status', ['draft', 'published', 'archived'])->default('published');
             $table->string('type')->default('document');
             $table->bigInteger('downloads')->default(0);

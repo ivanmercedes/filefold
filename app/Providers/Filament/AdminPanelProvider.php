@@ -30,8 +30,9 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->profile()
             ->colors([
-                'primary' => Color::Sky,
+                "primary" => Color::hex("#003796"),
             ])
+            ->brandLogo(fn() => view("custom-logo"))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
@@ -56,6 +57,7 @@ class AdminPanelProvider extends PanelProvider
             // ->plugin(FilamentSpatieRolesPermissionsPlugin::make())
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->viteTheme('resources/css/filament/admin/theme.css');
     }
 }
