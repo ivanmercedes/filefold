@@ -46,11 +46,7 @@ class DocumentResource extends Resource
                                     ->maxLength(255),
                                 Forms\Components\MarkdownEditor::make('description')
                                     ->label('Descripción')
-                                    ->required()
                                     ->maxLength(255),
-
-
-
                             ]),
                         Forms\Components\Section::make('Archivos')
                             ->schema([
@@ -59,8 +55,6 @@ class DocumentResource extends Resource
                                         FileUpload::make('file')
                                             ->label(''),
                                     ])
-
-
                             ])
                             ->collapsible(),
                     ]),

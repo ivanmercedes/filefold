@@ -1,0 +1,28 @@
+@import '/vendor/filament/filament/resources/css/theme.css';
+
+@config 'tailwind.config.js';
+
+.fi-sidebar-item-active > a {
+    @apply bg-[#003796];
+
+    & > svg,
+    span {
+        @apply text-white;
+    }
+
+    &:hover {
+        @apply bg-[#003796];
+    }
+}
+
+.fi-logo {
+    @apply !h-full;
+}
+
+.fi-logo img {
+    @apply w-72 h-16  object-contain;
+}
+
+.fi-sidebar-nav {
+    @apply bg-white shadow-md mt-[1px];
+}

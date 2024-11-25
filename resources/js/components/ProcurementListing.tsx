@@ -90,7 +90,7 @@ export default function ProcurementListing({ type }: { type: string }) {
                                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                                     <CardTitle className="text-base font-bold flex items-center gap-2">
                                         <FileText className="h-5 w-5 text-base" />
-                                        INAFOCAM-CCC-PEPU-2024-0005
+                                        TEST-CCC-PEPU-2024-0005
                                     </CardTitle>
                                     <span className="text-sm text-muted-foreground">
                                         Octubre 2024
@@ -133,7 +133,7 @@ export default function ProcurementListing({ type }: { type: string }) {
                                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                                     <CardTitle className="text-base font-bold flex items-center gap-2">
                                         <FileText className="h-5 w-5 text-base" />
-                                        INAFOCAM-CCC-PEPB-2024-0003
+                                        TEST-CCC-PEPB-2024-0003
                                     </CardTitle>
                                     <span className="text-sm text-muted-foreground">
                                         Agosto 2024

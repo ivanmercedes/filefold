@@ -31,6 +31,7 @@ export default function Welcome({ page }: PageProps<{ page: Page }>) {
                             />
                         </div>
 
+
                         <div className="ml-4 flex-grow">
                             <h6 className="text-lg font-semibold">
                                 Resolución 2-2023
@@ -51,6 +52,90 @@ export default function Welcome({ page }: PageProps<{ page: Page }>) {
 
 
 
+                    <div className="flex items-center p-4 bg-white shadow border rounded">
+                        <div className="flex items-center">
+                            <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Microsoft_Word_2013-2019_logo.svg"
+                                alt="PDF Icon"
+                                className="w-10 h-10"
+                            />
+                        </div>
+
+
+                        <div className="ml-4 flex-grow">
+                            <h6 className="text-lg font-semibold">
+                                Resolución 2-2023
+                            </h6>
+                            <p className="text-sm text-gray-500">
+                                28.30MB fecha de subida: 17 enero, 2024
+                            </p>
+                        </div>
+                        <div>
+                            <a
+                                href="#"
+                                className="px-4 py-2 text-red-600 border border-red-600 rounded hover:bg-red-600 hover:text-white transition"
+                            >
+                                Descargar
+                            </a>
+                        </div>
+                    </div>
+
+                    <div className="flex items-center p-4 bg-white shadow border rounded">
+                        <div className="flex items-center">
+                            <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg"
+                                alt="PDF Icon"
+                                className="w-10 h-10"
+                            />
+                        </div>
+
+
+                        <div className="ml-4 flex-grow">
+                            <h6 className="text-lg font-semibold">
+                                Resolución 2-2023
+                            </h6>
+                            <p className="text-sm text-gray-500">
+                                28.30MB fecha de subida: 17 enero, 2024
+                            </p>
+                        </div>
+                        <div>
+                            <a
+                                href="#"
+                                className="px-4 py-2 text-red-600 border border-red-600 rounded hover:bg-red-600 hover:text-white transition"
+                            >
+                                Descargar
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div className="flex items-center p-4 bg-white shadow border rounded">
+                        <div className="flex items-center">
+                            <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Microsoft_Office_PowerPoint_%282019%E2%80%93present%29.svg"
+                                alt="PDF Icon"
+                                className="w-10 h-10"
+                            />
+                        </div>
+
+
+                        <div className="ml-4 flex-grow">
+                            <h6 className="text-lg font-semibold">
+                                Resolución 2-2023
+                            </h6>
+                            <p className="text-sm text-gray-500">
+                                28.30MB fecha de subida: 17 enero, 2024
+                            </p>
+                        </div>
+                        <div>
+                            <a
+                                href="#"
+                                className="px-4 py-2 text-red-600 border border-red-600 rounded hover:bg-red-600 hover:text-white transition"
+                            >
+                                Descargar
+                            </a>
+                        </div>
+                    </div>
 
 
 
