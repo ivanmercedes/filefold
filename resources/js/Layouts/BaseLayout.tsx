@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import MobileMenu from "@/components/MobileMenu";
 import OficialSite from "@/components/OficialSite";
 import { Button } from "@/components/ui/button";
 import {
@@ -37,7 +38,8 @@ export default function BaseLayout({
                 </div>
             )}
             <div className="container px-5 mx-auto py-10 grid lg:grid-cols-5 lg:gap-10">
-                <div className="w-72 shadow">
+                <MobileMenu items={menu} />
+                <div className="w-72 shadow hidden lg:block">
                     {menu.map((category: any) =>
                         category.children && category.children.length > 0 ? (
                             <React.Fragment key={`${category.slug}-category`}>

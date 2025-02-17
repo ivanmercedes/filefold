@@ -14,7 +14,10 @@ export default {
     theme: {
     	extend: {
     		fontFamily: {
-    			sans: ['Figtree', ...defaultTheme.fontFamily.sans]
+    			sans: [
+    				'Figtree',
+                    ...defaultTheme.fontFamily.sans
+                ]
     		},
     		borderRadius: {
     			lg: 'var(--radius)',
@@ -22,10 +25,10 @@ export default {
     			sm: 'calc(var(--radius) - 4px)'
     		},
     		colors: {
-                "inafocam-info": "#00B8E1",
-                "inafocam-blue": "#022f88",
-                "inafocam-gray": "#EFF4FC",
-                "inafocam-text": "#707070",
+    			'inafocam-info': '#00B8E1',
+    			'inafocam-blue': '#022f88',
+    			'inafocam-gray': '#EFF4FC',
+    			'inafocam-text': '#707070',
     			background: 'hsl(var(--background))',
     			foreground: 'hsl(var(--foreground))',
     			card: {
@@ -66,6 +69,28 @@ export default {
     				'4': 'hsl(var(--chart-4))',
     				'5': 'hsl(var(--chart-5))'
     			}
+    		},
+    		keyframes: {
+    			'accordion-down': {
+    				from: {
+    					height: '0'
+    				},
+    				to: {
+    					height: 'var(--radix-accordion-content-height)'
+    				}
+    			},
+    			'accordion-up': {
+    				from: {
+    					height: 'var(--radix-accordion-content-height)'
+    				},
+    				to: {
+    					height: '0'
+    				}
+    			}
+    		},
+    		animation: {
+    			'accordion-down': 'accordion-down 0.2s ease-out',
+    			'accordion-up': 'accordion-up 0.2s ease-out'
     		}
     	}
     },

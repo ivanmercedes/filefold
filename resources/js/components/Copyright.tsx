@@ -1,7 +1,7 @@
 export default () => {
   return (
     <div className="bg-inafocam-blue">
-      <div className=" container mx-auto flex justify-between">
+      <div className=" container mx-auto flex justify-between flex-col lg:flex-row items-center">
         <div className="flex h-full min-h-[60px] flex-col items-center justify-between gap-5 py-4  lg:flex-row">
           <div className="flex flex-wrap items-center justify-center gap-3 text-center">
             <span className="text-white">
@@ -10,7 +10,7 @@ export default () => {
             </span>
           </div>
         </div>
-        <div className="flex items-center gap-8 text-white">
+        <div className="flex items-center gap-8 text-white ">
           <span className="font-bold uppercase">Síguenos</span>
           <div className="flex gap-2.5">
             <a
